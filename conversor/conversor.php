@@ -6,28 +6,30 @@ function conversor($numero, $_moneda)
     $_nommonedadecimales = 'CENTIMOS';
     $tempnum = explode('.', $numero);
 
+    $TextEnd = '';
+
     if ($tempnum[0] !== "") {
         $numf = milmillon($tempnum[0]);
         if ($numf == "UNO") {
             $numf = substr($numf, 0, -1);
         }
 
-        $TextEnd = $numf . ' ';
-        $TextEnd .= $_nommoneda . '      ';
+        $TextEnd = $numf . ' ' . $_nommoneda;
     }
-    if ($tempnum[1] == "" || $tempnum[1] >= 100) {
-        $tempnum[1] = "00";
-    } else {
-        $numf = centena($tempnum[1]);
+
+    // Mostrar parte decimal solo si existe y es mayor que 0
+    if (isset($tempnum[1]) && intval($tempnum[1]) > 0) {
+        $numf = centena(str_pad($tempnum[1], 2, '0', STR_PAD_RIGHT)); // asegura dos cifras
         if ($numf == "UNO") {
             $numf = substr($numf, 0, -1);
         }
 
-        $TextEnd .= 'CON ' . $numf . ' ';
-        $TextEnd .= $_nommonedadecimales;
+        $TextEnd .= ' CON ' . $numf . ' ' . $_nommonedadecimales;
     }
+
     return $TextEnd;
 }
+
 
 function unidad($numuero)
 {
