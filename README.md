@@ -31,28 +31,11 @@ Esta aplicación PHP convierte valores numéricos en su representación textual 
 4. Introduce un número (ej: 40650.75) y pulsa Convertir para ver su forma en texto.
 
 
-
 ✅ Requisitos
 
 PHP 7.4 o superior
 
 Servidor local compatible (Apache, Nginx, etc.)
-
-
-📂 Estructura del proyecto
-
-
-conversor-numeros-a-texto/
-├── conversor/
-│   └── conversor.php        # Funciones de conversión numérica
-├── css/
-│   └── style.css            # Estilos personalizados
-├── js/
-│   └── main.js              # Validación del formulario
-├── img/
-│   └── preview.png          # Captura de la interfaz
-├── index.php                # Página principal con formulario
-└── README.md
 
 
 📄 Licencia
